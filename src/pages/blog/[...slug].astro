@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+    const entries = await getCollection('blog')
+    return entries.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry }
+    }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+const dateStr = entry.data.date.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+})
+---
+
+<BaseLayout title={`${entry.data.title} — Jess Hewitt`}>
+    <article class="detail">
+        <div class="detail-header">
+            <div class="feed-tag blog">Blog</div>
+            <h1>{entry.data.title}</h1>
+            <div class="feed-date">{dateStr}</div>
+        </div>
+        <div class="detail-content prose">
+            <Content />
+        </div>
+    </article>
+</BaseLayout>

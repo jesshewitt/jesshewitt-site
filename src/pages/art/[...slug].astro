@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+    const entries = await getCollection('art')
+    return entries.map(entry => ({
+        params: { slug: entry.slug },
+        props: { entry }
+    }))
+}
+
+const { entry } = Astro.props
+const { Content } = await entry.render()
+const hasBody = entry.body && entry.body.trim().length > 0
+---
+
+<BaseLayout title={`${entry.data.title} — Jess Hewitt`}>
+    <article class="detail">
+        <div class="detail-header">
+            <div class="feed-tag art">Art</div>
+            <h1>{entry.data.title}</h1>
+            <p class="detail-desc">{entry.data.description}</p>
+            {entry.data.externalLinks.length > 0 && (
+                <div class="detail-links">
+                    {entry.data.externalLinks.map(link => (
+                        <a href={link.url} target="_blank" rel="noopener">{link.label} &rarr;</a>
+                    ))}
+                </div>
+            )}
+        </div>
+
+        {hasBody ? (
+            <div class="detail-content prose">
+                <Content />
+            </div>
+        ) : (
+            <div class="detail-images">
+                {entry.data.images.map(src => (
+                    <img src={src} alt={entry.data.title} loading="lazy" />
+                ))}
+            </div>
+        )}
+
+        {entry.data.exhibitions.length > 0 && (
+            <div class="detail-exhibitions">
+                <h2>Exhibitions</h2>
+                {entry.data.exhibitions.map(ex => (
+                    <div class="exhibition">
+                        <p>{ex.description}</p>
+                        {ex.image && <img src={ex.image} alt="Exhibition photo" loading="lazy" />}
+                    </div>
+                ))}
+            </div>
+        )}
+    </article>
+</BaseLayout>

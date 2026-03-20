@@ -242,3 +242,140 @@ h1, h2, h3 {
         max-height: 200px;
     }
 }
+
+/* Detail pages */
+.detail {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 3rem 2.5rem;
+}
+
+.detail-header {
+    margin-bottom: 2.5rem;
+}
+
+.detail-header h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.detail-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.detail-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.detail-links a {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.detail-links a:hover {
+    color: var(--heading);
+}
+
+.detail-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.detail-images img {
+    border-radius: 6px;
+}
+
+.detail-exhibitions {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.detail-exhibitions h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.exhibition {
+    margin-bottom: 2rem;
+}
+
+.exhibition p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.exhibition img {
+    border-radius: 6px;
+}
+
+/* Prose (rendered markdown) */
+.prose h2 {
+    font-size: 1.4rem;
+    margin: 2.5rem 0 1rem;
+}
+
+.prose h3 {
+    font-size: 1.1rem;
+    margin: 2rem 0 0.75rem;
+}
+
+.prose p {
+    margin-bottom: 1rem;
+}
+
+.prose img {
+    border-radius: 6px;
+    margin: 1.5rem 0;
+}
+
+.prose ul, .prose ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.prose li {
+    margin-bottom: 0.25rem;
+}
+
+.prose hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
+
+.prose a {
+    color: var(--heading);
+    text-decoration: underline;
+    text-decoration-color: var(--text-muted);
+    text-underline-offset: 3px;
+}
+
+.prose a:hover {
+    text-decoration-color: var(--text);
+}
+
+.prose code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background: var(--border);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+}
+
+@media (max-width: 700px) {
+    .detail {
+        padding: 2rem 1.5rem;
+    }
+
+    .detail-header h1 {
+        font-size: 1.5rem;
+    }
+}
