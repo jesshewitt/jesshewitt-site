@@ -439,3 +439,13 @@ h1, h2, h3 {
 .about-links a:hover {
     color: var(--heading);
 }
+
+.gallery-link {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.gallery-link:hover {
+    color: var(--heading);
+}

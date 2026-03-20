@@ -4,7 +4,7 @@ const pathname = Astro.url.pathname
 
 <header class="topbar">
     <div class="topbar-name">
-        Jess Hewitt <span>— artist & developer</span>
+        <a href="/">Jess Hewitt <span>— artist & developer</span></a>
     </div>
     <button class="nav-toggle" aria-label="Toggle navigation">
         <span></span>
@@ -16,7 +16,7 @@ const pathname = Astro.url.pathname
         <a href="/art/" class:list={[{ active: pathname.startsWith('/art') }]}>Art</a>
         <a href="/projects/" class:list={[{ active: pathname.startsWith('/projects') }]}>Projects</a>
         <a href="/blog/" class:list={[{ active: pathname.startsWith('/blog') }]}>Blog</a>
-        <a href="/about/" class:list={[{ active: pathname === '/about/' }]}>About</a>
+        <a href="/about/" class:list={[{ active: pathname.startsWith('/about') }]}>About</a>
     </nav>
 </header>
 
