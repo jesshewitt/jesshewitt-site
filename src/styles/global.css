@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg: #0c0c0c;
+    --text: #c8c4bc;
+    --heading: #e8e4dc;
+    --text-secondary: #7a7670;
+    --text-muted: #3a3835;
+    --border: #1a1a1a;
+    --nav-inactive: #6a6560;
+    --accent-art: #8b7a6b;
+    --accent-project: #6b7a8b;
+    --accent-blog: #7a8b6b;
+
+    --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'DM Mono', monospace;
+
+    --max-width: 900px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--heading);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--text);
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    color: var(--heading);
+    font-weight: 500;
+    line-height: 1.3;
+}
