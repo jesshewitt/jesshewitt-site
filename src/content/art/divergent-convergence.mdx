@@ -1,0 +1,75 @@
+---
+title: Divergent Convergence
+date: 2022-06-01
+thumbnail: /img/Divergent-Convergence.png
+images:
+    - /img/Divergent-Convergence.png
+    - /img/dc/distortion.jpg
+    - /img/dc/perlin.jpg
+    - /img/dc/shapes.jpg
+    - /img/dc/mixed.jpg
+    - /img/dc/final.jpg
+    - /img/dc/eliminated.jpg
+description: >
+    Long-form project for fxhash — compositions of shapes and noise, order and chaos.
+    Where does order end and chaos begin?
+externalLinks:
+    - label: fxhash
+      url: https://www.fxhash.xyz/generative/13587
+exhibitions:
+    - description: >
+        Divergent Convergence #20 and #43 were exhibited at State of the Art,
+        presented by Tezos and fxhash and curated by Tender at Paris+ par Art Basel, October 2022.
+      image: /img/dc20-art-basel.jpg
+featured: true
+---
+
+## Inspiration
+
+My workflow has been typically shader-based, but I recently purchased a pen plotter and needed a source of randomness to use for generating SVG with Javascript. I decided to implement Perlin noise from scratch, just for fun.
+
+Of course, after I implemented it in Javascript, I had to port it to GLSL so I could also use it with shaders. I had so much fun using the noise in shaders that I have barely touched the plotter. (Sorry, friend!)
+
+I was curious about how far you could push simple concepts like Perlin noise and signed distance fields/functions to create visually compelling compositions. I also wanted to play around with the idea of order and chaos, especially the boundaries between the two. Divergent Convergence was inspired by this experimentation.
+
+## Process
+
+The concept and process of this series is fairly simple — shapes and noise are combined and post-processed with a palette, frame and texture.
+
+### Domain distortion
+
+Perlin noise is used to distort a set of coordinates. The scale and intensity of this distortion is randomized.
+
+![Distorted coordinates](/img/dc/distortion.jpg)
+
+### Perlin noise
+
+Perlin noise is generated again, this time using the warped coordinates and a randomized scale.
+
+![Perlin noise](/img/dc/perlin.jpg)
+
+### Shapes
+
+Three shapes are generated. The type, scale, and position of each shape are randomized.
+
+![Shapes](/img/dc/shapes.jpg)
+
+### Combining
+
+The shapes are combined using random methods. The combined shapes are then mixed with Perlin noise, and again the mixing method is randomized.
+
+![Combined shapes and noise](/img/dc/mixed.jpg)
+
+### Finishing
+
+The combined shapes and noise are colorized using a random palette. A frame and subtle texture are added.
+
+![Final result](/img/dc/final.jpg)
+
+## Summary
+
+I loved creating Divergent Convergence! I spent about two months working on it, and about half of that time was spent fine-tuning the output. It was a labor of love — I wanted it to be as close to perfect as possible.
+
+The real challenge of this series was to produce reliably good pieces of sufficient variety. Some interesting variations and palettes did not make it into the final version because I was unable to achieve quality results with them 100% of the time.
+
+![Eliminated varieties](/img/dc/eliminated.jpg)
