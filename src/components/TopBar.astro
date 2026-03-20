@@ -1,0 +1,29 @@
+---
+const pathname = Astro.url.pathname
+---
+
+<header class="topbar">
+    <div class="topbar-name">
+        Jess Hewitt <span>— artist & developer</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav class="topbar-nav">
+        <a href="/" class:list={[{ active: pathname === '/' }]}>Everything</a>
+        <a href="/art/" class:list={[{ active: pathname.startsWith('/art') }]}>Art</a>
+        <a href="/projects/" class:list={[{ active: pathname.startsWith('/projects') }]}>Projects</a>
+        <a href="/blog/" class:list={[{ active: pathname.startsWith('/blog') }]}>Blog</a>
+        <a href="/about/" class:list={[{ active: pathname === '/about/' }]}>About</a>
+    </nav>
+</header>
+
+<script>
+    const toggle = document.querySelector('.nav-toggle')
+    const nav = document.querySelector('.topbar-nav')
+    toggle?.addEventListener('click', () => {
+        nav?.classList.toggle('open')
+    })
+</script>
