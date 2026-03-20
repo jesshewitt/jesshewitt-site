@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content'
+import FeedItem from './FeedItem.astro'
+
+interface Props {
+    filter?: 'art' | 'project' | 'blog'
+}
+
+const { filter } = Astro.props
+
+const art = filter && filter !== 'art' ? [] : (await getCollection('art')).map(entry => ({
+    type: 'art' as const,
+    title: entry.data.title,
+    description: entry.data.description,
+    date: entry.data.date,
+    slug: entry.slug,
+    thumbnail: entry.data.thumbnail
+}))
+
+const projects = filter && filter !== 'project' ? [] : (await getCollection('projects')).map(entry => ({
+    type: 'project' as const,
+    title: entry.data.title,
+    description: entry.data.description,
+    date: entry.data.date,
+    slug: entry.slug,
+    thumbnail: entry.data.thumbnail
+}))
+
+const blog = filter && filter !== 'blog' ? [] : (await getCollection('blog')).map(entry => ({
+    type: 'blog' as const,
+    title: entry.data.title,
+    description: entry.data.description,
+    date: entry.data.date,
+    slug: entry.slug,
+    thumbnail: undefined
+}))
+
+const items = [...art, ...projects, ...blog].sort((a, b) => b.date.getTime() - a.date.getTime())
+---
+
+<div class="feed">
+    {items.map(item => <FeedItem {...item} />)}
+</div>

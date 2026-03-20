@@ -1,0 +1,31 @@
+---
+interface Props {
+    type: 'art' | 'project' | 'blog'
+    title: string
+    description: string
+    date: Date
+    slug: string
+    thumbnail?: string
+}
+
+const { type, title, description, date, slug, thumbnail } = Astro.props
+
+const typeLabels = { art: 'Art', project: 'Project', blog: 'Blog' }
+const basePaths = { art: '/art', project: '/projects', blog: '/blog' }
+const href = `${basePaths[type]}/${slug}/`
+const dateStr = date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+---
+
+<article class:list={['feed-item', { 'text-only': !thumbnail }]}>
+    {thumbnail && (
+        <a href={href} class="feed-thumb">
+            <img src={thumbnail} alt={title} loading="lazy" />
+        </a>
+    )}
+    <div class="feed-body">
+        <div class:list={['feed-tag', type]}>{typeLabels[type]}</div>
+        <h2 class="feed-title"><a href={href}>{title}</a></h2>
+        <p class="feed-desc">{description}</p>
+        <div class="feed-date">{dateStr}</div>
+    </div>
+</article>
