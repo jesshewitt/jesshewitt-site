@@ -405,3 +405,37 @@ h1, h2, h3 {
     transform: scale(1.05);
     opacity: 0.85;
 }
+
+/* About page */
+.about-content {
+    max-width: 600px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.about-content h2 {
+    font-size: 1.2rem;
+    margin: 2rem 0 1rem;
+}
+
+.about-links {
+    list-style: none;
+    padding: 0;
+}
+
+.about-links li {
+    margin-bottom: 0.5rem;
+}
+
+.about-links a {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.about-links a:hover {
+    color: var(--heading);
+}
