@@ -285,11 +285,14 @@ h1, h2, h3 {
 .detail-images {
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 1.5rem;
 }
 
 .detail-images img {
     border-radius: 6px;
+    width: auto;
+    max-width: 100%;
 }
 
 .detail-exhibitions {
@@ -352,14 +355,11 @@ h1, h2, h3 {
 }
 
 .prose a {
-    color: var(--heading);
-    text-decoration: underline;
-    text-decoration-color: var(--text-muted);
-    text-underline-offset: 3px;
+    color: var(--accent-art);
 }
 
 .prose a:hover {
-    text-decoration-color: var(--text);
+    color: var(--heading);
 }
 
 .prose code {
@@ -417,6 +417,14 @@ h1, h2, h3 {
     margin-bottom: 2rem;
 }
 
+.about-content p a {
+    color: var(--accent-art);
+}
+
+.about-content p a:hover {
+    color: var(--heading);
+}
+
 .about-content h2 {
     font-size: 1.2rem;
     margin: 2rem 0 1rem;
@@ -432,7 +440,7 @@ h1, h2, h3 {
 }
 
 .about-links a {
-    color: var(--text);
+    color: var(--accent-art);
     font-size: 0.95rem;
 }
 

@@ -14,5 +14,5 @@ images:
     - /img/1603395498326.gif
     - /img/1606079593243.gif
 description: >
-    Early GIF animations — explorations in generative motion and color.
+    Early GIF animations. Explorations in generative motion and color.
 ---

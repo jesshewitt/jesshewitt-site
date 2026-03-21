@@ -7,7 +7,7 @@ const art = (await getCollection('art')).sort((a, b) =>
 )
 ---
 
-<BaseLayout title="Gallery — Jess Hewitt">
+<BaseLayout title="Gallery | Jess Hewitt">
     <div class="gallery">
         {art.map(entry => (
             <a href={`/art/${entry.slug}/`} class="gallery-item">

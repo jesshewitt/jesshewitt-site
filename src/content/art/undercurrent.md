@@ -6,7 +6,7 @@ images:
     - /img/Undercurrent.png
 description: >
     Long-form generative project on fxhash with params. Params projects enable
-    collaboration — the artist creates the system and the collector curates the output.
+    collaboration: the artist creates the system and the collector curates the output.
 externalLinks:
     - label: fxhash
       url: https://www.fxhash.xyz/generative/30857
