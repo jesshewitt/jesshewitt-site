@@ -1,3 +1,3 @@
-# jesshewitt.art
+# jesshewitt.net
 
-This repo contains the content of jesshewitt.art
+This repo contains the content of jesshewitt.net
