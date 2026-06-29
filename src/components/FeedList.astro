@@ -13,7 +13,7 @@ const art = filter && filter !== 'art' ? [] : (await getCollection('art')).map(e
     title: entry.data.title,
     description: entry.data.description,
     date: entry.data.date,
-    slug: entry.slug,
+    slug: entry.id,
     thumbnail: entry.data.thumbnail
 }))
 
@@ -22,7 +22,7 @@ const projects = filter && filter !== 'project' ? [] : (await getCollection('pro
     title: entry.data.title,
     description: entry.data.description,
     date: entry.data.date,
-    slug: entry.slug,
+    slug: entry.id,
     thumbnail: entry.data.thumbnail
 }))
 
@@ -31,7 +31,7 @@ const blog = filter && filter !== 'blog' ? [] : (await getCollection('blog')).ma
     title: entry.data.title,
     description: entry.data.description,
     date: entry.data.date,
-    slug: entry.slug,
+    slug: entry.id,
     thumbnail: undefined
 }))
 

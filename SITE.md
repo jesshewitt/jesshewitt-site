@@ -19,7 +19,7 @@ src/
     art/           # art pieces (.md or .mdx)
     projects/      # software projects (.md)
     blog/          # blog posts (.md)
-    config.ts      # content collection schemas
+  content.config.ts  # content collection schemas
   components/      # reusable Astro components
     TopBar.astro   # site header with nav
     FeedItem.astro # single item in a feed list
